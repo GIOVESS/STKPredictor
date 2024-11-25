@@ -1,0 +1,40 @@
+<!-- templates/eda_report.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDA Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/eda">EDA</a>
+        <a href="/forecast/GOOGL">Forecasting</a>
+    </div>
+
+    <div class="container">
+        <h1>Exploratory Data Analysis Results</h1>
+
+        <h2>Adjusted Close Price Over Time</h2>
+        <img src="{{ url_for('static', filename=plot_paths[0]) }}" alt="Adjusted Close Price Over Time">
+
+        <h2>Distribution of Adjusted Close Prices</h2>
+        <img src="{{ url_for('static', filename=plot_paths[1]) }}" alt="Adjusted Close Distribution">
+
+        <h2>Correlation Matrix</h2>
+        <img src="{{ url_for('static', filename=plot_paths[2]) }}" alt="Correlation Matrix">
+
+        <h2>Pair Plot</h2>
+        <img src="{{ url_for('static', filename=plot_paths[3]) }}" alt="Pair Plot">
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 KenTrade Analytics, All Rights Reserved</p>
+    </div>
+</body>
+
+</html>

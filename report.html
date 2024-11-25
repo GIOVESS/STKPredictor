@@ -1,0 +1,21 @@
+<!-- templates/report.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Stationarity Analysis for {{ symbol }}</h1>
+
+    <div class="card">
+        <h2>Stationarity Plot</h2>
+        <img src="{{ url_for('static', filename='plots/' + stationarity_plot) }}" alt="Stationarity Plot">
+    </div>
+
+    <div class="card">
+        <h2>Analysis Results</h2>
+        <p>The stationarity test shows whether the stock price time series is stationary or needs transformation.</p>
+        <ul>
+            <li>Original Data: {{ symbol }} Stock Prices</li>
+            <li>Rolling Mean: Smoothed average of the stock prices over time</li>
+            <li>Rolling Std: Smoothed standard deviation of the stock prices</li>
+        </ul>
+    </div>
+{% endblock %}
